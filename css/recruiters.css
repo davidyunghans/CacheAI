@@ -1,0 +1,193 @@
+body {
+    background: black;
+    color: white;
+    min-height: 100vh;
+    font-family: inherit;
+    overflow-x: hidden;
+  }
+  .animated-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -2;
+    background: linear-gradient(120deg, #5300a0 0%, #1a1a1a 50%, #7f42a7 100%);
+    background-size: 200% 200%;
+    animation: gradientMove 8s ease-in-out infinite alternate;
+    opacity: 0.25;
+  }
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  .recruiter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5vw 1rem 5vw;
+    position: relative;
+    z-index: 2;
+  }
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: white;
+    text-shadow: 0 0 20px #5300a0, 0 0 2px #fff;
+    transition: text-shadow 0.3s;
+  }
+  .logo:hover {
+    text-shadow: 0 0 40px #7f42a7, 0 0 8px #fff;
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .search-bar, .dropdown, .refresh-btn {
+    transition: box-shadow 0.2s, transform 0.2s, background 0.2s;
+    flex: 1 1 200px;
+    min-width: 150px;
+  }
+  .search-bar {
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 2px 8px rgba(127,66,167,0.08);
+  }
+  .search-bar:focus {
+    box-shadow: 0 0 0 3px #7f42a7;
+    transform: scale(1.04);
+  }
+  .dropdown {
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(127,66,167,0.08);
+  }
+  .dropdown:focus, .dropdown:hover {
+    box-shadow: 0 0 0 3px #7f42a7;
+    transform: scale(1.04);
+  }
+  .refresh-btn {
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(127,66,167,0.08);
+  }
+  .refresh-btn:hover {
+    background: #e0e0e0;
+    transform: scale(1.08) rotate(-8deg);
+    box-shadow: 0 0 16px #7f42a7;
+  }
+  .profiles-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 5vw;
+    margin-top: 5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .profile-card {
+    background: white;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(127,66,167,0.15), 0 0 0 0 #7f42a7;
+    padding: 2rem 1.5rem;
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0.95;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .profile-card:hover {
+    transform: translateY(-8px) scale(1.04) rotate(-1deg);
+    box-shadow: 0 8px 32px #7f42a7, 0 0 0 4px #5300a0;
+    z-index: 2;
+  }
+  .profile-card:active {
+    transform: scale(1.1);
+  }
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid #5300a0;
+    box-shadow: 0 0 12px #7f42a7;
+    transition: box-shadow 0.3s;
+  }
+  .profile-card:hover .profile-pic {
+    box-shadow: 0 0 32px #7f42a7, 0 0 8px #fff;
+  }
+  .profile-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+    text-shadow: 0 0 2px #7f42a7;
+  }
+  .profile-criteria {
+    background: #f3f0ff;
+    color: #2E2B41;
+    border-radius: 6px;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.95rem;
+    margin: 0.2rem;
+    display: inline-block;
+    box-shadow: 0 1px 4px #7f42a733;
+    transition: background 0.2s, color 0.2s;
+  }
+  .profile-criteria:hover {
+    background: #7f42a7;
+    color: #fff;
+  }
+  @media (max-width: 900px) {
+    .profiles-grid {
+      gap: 1rem;
+    }
+    .profile-card {
+      width: 90vw;
+      max-width: 350px;
+    }
+    .recruiter-header {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+  }
+.profile-title {
+    font-weight: bold; /* Make the title bold */
+}
+
+.profile-title,
+.profile-experience,
+.profile-location {
+  text-align: left; /* Align text to the left */
+  width: 100%; /* Make the elements take the full width */
+  margin: 0.2rem 0; /* Add some margin for spacing */
+}
+.profile-skill{
+  display: inline-block;
+}

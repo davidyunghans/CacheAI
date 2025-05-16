@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recruiters - CacheAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="general.css">
+  <link rel="stylesheet" href="/css/recruiters.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <div class="animated-bg"></div>
+  <div class="recruiter-header" data-aos="fade-down" data-aos-duration="1200">
+    <div class="logo">CACHE.AI</div>
+    <div class="controls">
+      <input class="search-bar" type="text" placeholder="Search candidates..." data-aos="fade-right" data-aos-delay="200">
+      <select class="dropdown" data-aos="fade-right" data-aos-delay="400" onchange="filterProfiles()">
+        <option value="">Search Criteria</option>
+        <option value="all">All</option>
+        <option value="Frontend Developer">Frontend Developer</option>
+        <option value="Backend Developer">Backend Developer</option>
+        <option value="Full Stack Developer">Full Stack Developer</option>
+        <option value="Mobile Developer">Mobile Developer</option>
+        <option value="DevOps Engineer">DevOps Engineer</option>
+        <option value="Design">Design</option>
+        <option value="Systems Analyst">Systems Analyst</option>
+      </select>
+      <button class="refresh-btn" onclick="window.location.reload()" data-aos="fade-right" data-aos-delay="600">Refresh</button>
+    </div>
+  </div>
+  <div class="profiles-grid" id="profilesGrid"></div>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="js/recruiter.js"></script>
+</body>
+</html>
