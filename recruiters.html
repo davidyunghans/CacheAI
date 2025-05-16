@@ -5,7 +5,7 @@
   <title>Recruiters - CacheAI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="general.css">
-  <link rel="stylesheet" href="css/recruiters.css">
+  <link rel="stylesheet" href="/css/recruiters.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
@@ -14,48 +14,22 @@
     <div class="logo">CACHE.AI</div>
     <div class="controls">
       <input class="search-bar" type="text" placeholder="Search candidates..." data-aos="fade-right" data-aos-delay="200">
-      <select class="dropdown" data-aos="fade-right" data-aos-delay="400">
+      <select class="dropdown" data-aos="fade-right" data-aos-delay="400" onchange="filterProfiles()">
         <option value="">Search Criteria</option>
-        <option>Software Engineering</option>
-        <option>Data Science</option>
-        <option>Product Management</option>
-        <option>Design</option>
-        <option>Marketing</option>
-        <option>Finance</option>
-        <option>AI/ML</option>
-        <option>Cybersecurity</option>
+        <option value="all">All</option>
+        <option value="Frontend Developer">Frontend Developer</option>
+        <option value="Backend Developer">Backend Developer</option>
+        <option value="Full Stack Developer">Full Stack Developer</option>
+        <option value="Mobile Developer">Mobile Developer</option>
+        <option value="DevOps Engineer">DevOps Engineer</option>
+        <option value="Design">Design</option>
+        <option value="Systems Analyst">Systems Analyst</option>
       </select>
       <button class="refresh-btn" onclick="window.location.reload()" data-aos="fade-right" data-aos-delay="600">Refresh</button>
     </div>
   </div>
-  <div class="profiles-grid">
-    <div class="profile-card" data-aos="zoom-in" data-aos-delay="100">
-      <img class="profile-pic" src="assets/65.jpg" alt="Profile Picture">
-      <div class="profile-name">Alex Johnson</div>
-      <div class="profile-criteria">Software Engineering</div>
-      <div class="profile-criteria">AI/ML</div>
-      <div class="profile-criteria">Python</div>
-    </div>
-    <div class="profile-card" data-aos="zoom-in" data-aos-delay="250">
-      <img class="profile-pic" src="assets/32.jpg" alt="Profile Picture">
-      <div class="profile-name">Maria Lee</div>
-      <div class="profile-criteria">Data Science</div>
-      <div class="profile-criteria">R</div>
-      <div class="profile-criteria">SQL</div>
-    </div>
-    <div class="profile-card" data-aos="zoom-in" data-aos-delay="400">
-      <img class="profile-pic" src="assets/44.jpg" alt="Profile Picture">
-      <div class="profile-name">Chris Evans</div>
-      <div class="profile-criteria">Product Management</div>
-      <div class="profile-criteria">Agile</div>
-      <div class="profile-criteria">Leadership</div>
-    </div>
-  </div>
+  <div class="profiles-grid" id="profilesGrid"></div>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true
-    });
-  </script>
+  <script src="js/recruiter.js"></script>
 </body>
 </html>
