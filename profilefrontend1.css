@@ -1,0 +1,222 @@
+*{
+  margin: 10;
+  padding: 0;
+}
+
+html{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 12pts;
+  color: var(---text-color);
+  text-align: center;
+  overflow-y: 500px;
+  overflow-x: hidden;
+}
+
+
+
+body {
+  background-color: black;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav {
+  background-color: rgb(3, 3, 3);
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav li {
+  height: 50px;
+}
+
+nav a {
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgb(255, 254, 254);
+}
+
+nav a:hover {
+  background-color: rgb(105, 104, 104);
+}
+
+nav li:first-child{
+  margin-right: auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.996);
+  backdrop-filter: blur(5px);
+  box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar li {
+  width: 100%;
+}
+
+.sidebar a {
+  width: 100%;
+}
+
+@media(max-width: 800px) {
+  .hideOnMobile {
+    display: none;
+  }
+}
+
+@media(max-width: 200px) {
+  .sidebar{
+    width: 25%;
+  }
+}
+
+.header {
+  padding-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-height: calc(90vh - 6rem);
+  color: white;
+  padding-top: 40px;
+
+}
+
+form{
+  width:min(400px, 100%);
+  margin-top: 10px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-radius: 25px;
+  max-width: 250px;
+}
+
+form > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+form input {
+  box-sizing: border-box;
+  flex-grow: 1;
+  min-width: 0;
+  height: 50px;
+  padding: 1em;
+  font: inherit;
+  border-radius: 15px;
+  bottom: 30px;
+  border: 2px solid var(--accent-color);
+  border-left: none;
+  background-color: var(--input-color);
+  transition: 150ms ease;
+}
+
+form input:hover{
+  border-color: var(--accent-color);
+}
+
+form input:focus{
+  outline: none;
+  border-color: var(--text-color);
+}
+
+div:has(input:focus) > label{
+  background-color: var(---text-color);
+}
+
+form input::placeholder{
+  color: var(--text-color);
+}
+
+:root{
+  --accent-color: #8672FF;
+  --base-color: white;
+  --text-color: #2E2B41;
+  --input-color: #F3F0FF;
+}
+
+.description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  margin-top: 50px;
+}
+
+#drop-area {
+  width: 250px;
+  height: 150px;
+  padding: 10px;
+  background: #ffff;
+  text-align: center;
+  border-radius: 25px;
+}
+
+#img-view {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 2px #835a5a;
+  background: #f7f8ff; 
+  position: relative;
+  width: 18rem;
+  height: 2.5rem;
+  border-radius: 50px;
+  background: linear-gradient(to right, #656565, #7f42a7, #6600c5, #5300a0, #757575, #656565);
+  background-size: 200%;
+  animation: animationGradient 2.5s linear infinite;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+} 
+
+
+
+@keyframes  animationGradient{
+  to {
+    background-position: 200%;
+  }
+}
